@@ -13,10 +13,10 @@ The following **required** functionality is completed:
 - [x] **The list displays a list of data fetched using an API call**
 - [x] **Data uses the useEffect React hook and async/await syntax**
 - [x] **The app dashboard includes at least three summary statistics about the data such as**
-  - [ ] *Size*
-  - [ ] *Gender*
-  - [ ] *Age*
-  - [ ] *Breed*
+  - [x] *Size*
+  - [x] *Gender*
+  - [x] *Age*
+  - [x] *Breed*
 - [ ] **A search bar allows the user to search for an item in the fetched data**
   - [x] *There is a Search Bar, but its not currently functional*
 - [ ] **Multiple different filters (2+) allow the user to filter items in the database by specified categories**
@@ -37,16 +37,16 @@ The following **additional** features are implemented:
   * [x] User can select how many items they want to see in the dashboard.
   * [x] User can navigate through 'pages' in the items
 * [x] Collapsible Sidebar
-  * [ ] User can collabpse the sidebar for a better view of the dashboard
+  * [x] User can collabpse the sidebar for a better view of the dashboard
 * [x] Sidebar Navigation
-  * [ ] User can click on different sections of the Side Navigation and be taken to that specific page.
+  * [x] User can click on different sections of the Side Navigation and be taken to that specific page.
 
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/SirArnoldB/PawSomeDash/blob/main/PawSomeDash/PawSomeDash.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- GIF tool you used! -->
 
