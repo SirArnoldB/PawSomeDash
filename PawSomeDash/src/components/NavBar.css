@@ -1,0 +1,11 @@
+@import "rsuite/dist/rsuite.css";
+
+.nav-bar-header {
+    display: flex;
+    flex-direction: column;
+    margin: 5rem;
+}
+
+.nav-bar-container {
+    background-color: #FFFFFF !important;
+}

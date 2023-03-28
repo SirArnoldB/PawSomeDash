@@ -1,0 +1,11 @@
+@import "rsuite/dist/rsuite.css";
+
+.page-container {
+  margin: 3rem;
+  transition: padding 0.5s;
+  position: relative;
+}
+
+.App {
+  display: flex;
+}
