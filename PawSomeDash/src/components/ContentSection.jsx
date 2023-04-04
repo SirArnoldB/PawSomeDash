@@ -1,16 +1,23 @@
 import React from "react";
-import Home from "../pages/Home";
-import Pets from "../pages/Pets";
-import Organizations from "../pages/Organizations";
-import About from "../pages/About";
+import Home from "../routes/Home";
+import Organizations from "../routes/Organizations";
+import About from "../routes/About";
+import PetsDash from "../routes/PetsDash";
+import PetDetails from "../routes/PetDetails";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const ContentSection = ({ activeKey }) => {
   return (
     <div className="page-container rs-container">
-      {activeKey === "1" && <Home />}
-      {activeKey === "2-1" && <Pets />}
-      {activeKey === "2-2" && <Organizations />}
-      {activeKey === "3" && <About />}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/pets">
+          <Route index element={<PetsDash />} />
+          <Route path=":petId" element={<PetDetails />} />
+        </Route>
+        {/* <Route path="/organizations" element={<Organizations />} /> */}
+        <Route path="/about" element={<About />} />
+      </Routes>
     </div>
   );
 };

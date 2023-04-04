@@ -1,11 +1,21 @@
-@import "rsuite/dist/rsuite.css";
+/* @import "rsuite/dist/rsuite.css"; */
 
 .page-container {
   margin: 3rem;
   transition: padding 0.5s;
   position: relative;
+  margin-left: 8vw;
 }
 
 .App {
   display: flex;
+}
+
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation2.css-80pr5n-MuiPaper-root {
+  width: 60vw;
+}
+
+.pets-table-chats {
+  display: flex;
+  flex-direction: row;
 }

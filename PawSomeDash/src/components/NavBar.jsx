@@ -8,21 +8,26 @@ import InfoCicle from "@rsuite/icons/legacy/InfoCircle";
 import { Icon } from "@rsuite/icons";
 import { MdPets } from "react-icons/md";
 import GroupIcon from "@rsuite/icons/legacy/Group";
-import { Input, InputGroup } from "rsuite";
-import SearchIcon from "@rsuite/icons/Search";
 import { useState } from "react";
 import { Avatar } from "rsuite";
+import { Link, Outlet } from "react-router-dom";
 
 const NavBar = ({ activeKey, onSelect }) => {
   const [expanded, setExpanded] = useState(true);
 
   return (
-    <div className="nav-bar-container" style={{ width: 250 }}>
+    <div className="nav-bar-container">
       <Sidenav
+        className="side-nav-bar"
         expanded={expanded}
         defaultOpenKeys={["2"]}
-        style={{ height: "100vh" }}
       >
+        <Sidenav.Toggle
+          expanded={expanded}
+          onToggle={(expanded) => setExpanded(expanded)}
+          style={{ marginTop: "0" }}
+        />
+        <hr />
         <Sidenav.Header>
           <div className="nav-bar-header" style={{ alignItems: "center" }}>
             {expanded && (
@@ -34,20 +39,17 @@ const NavBar = ({ activeKey, onSelect }) => {
               />
             )}
           </div>
-          <InputGroup
-            inside
-            style={{ width: "85%", alignItems: "center", marginLeft: "0.5rem" }}
-          >
-            <Input />
-            <InputGroup.Button>
-              <SearchIcon />
-            </InputGroup.Button>
-          </InputGroup>
         </Sidenav.Header>
         <Sidenav.Body>
           <Nav activeKey={activeKey} onSelect={onSelect}>
-            <Nav.Item eventKey="1" icon={<HomeIcon />}>
-              Home
+            <Nav.Item
+              onClick={() => setExpanded(!expanded)}
+              eventKey="1"
+              icon={<HomeIcon />}
+            >
+              <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+                Home
+              </Link>
             </Nav.Item>
             <Nav.Menu
               placement="rightStart"
@@ -55,17 +57,45 @@ const NavBar = ({ activeKey, onSelect }) => {
               title="Dashboard"
               icon={<DashboardIcon />}
             >
-              <Nav.Item eventKey="2-1" icon={<Icon as={MdPets} />}>
-                Pets
+              <Nav.Item
+                onClick={() => setExpanded(!expanded)}
+                eventKey="2-1"
+                icon={<Icon as={MdPets} />}
+              >
+                <Link
+                  to="/pets"
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  Pets
+                </Link>
               </Nav.Item>
-              <Nav.Item eventKey="2-2" icon={<GroupIcon />}>
-                Organizations
-              </Nav.Item>
+              {/* <Nav.Item
+                onClick={() => setExpanded(!expanded)}
+                eventKey="2-2"
+                icon={<GroupIcon />}
+              >
+                <Link
+                  to="/organizations"
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  Organizations
+                </Link>
+              </Nav.Item> */}
             </Nav.Menu>
-            <Nav.Item eventKey="3" icon={<InfoCicle />}>
-              About
+            <Nav.Item
+              onClick={() => setExpanded(!expanded)}
+              eventKey="3"
+              icon={<InfoCicle />}
+            >
+              <Link
+                to="/about"
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                About
+              </Link>
             </Nav.Item>
           </Nav>
+          <Outlet />
         </Sidenav.Body>
         <Sidenav.Toggle
           expanded={expanded}
